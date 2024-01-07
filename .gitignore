@@ -87,3 +87,7 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# exclude testing.py(used for testing purpose) from source control
+testing.py
+
