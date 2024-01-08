@@ -56,16 +56,16 @@ stages:
       size: 250834
     - path: ./src/models/train_model.py
       hash: md5
-      md5: 5a81a95cf3af9e1b883e9d639b91606f
-      size: 3189
+      md5: e916252f5b8b996ddc0edecb9f3a255c
+      size: 3206
     params:
       params.yaml:
         train_model.max_depth: 7
         train_model.model_loc: /models
-        train_model.n_estimators: 10
+        train_model.n_estimators: 8
         train_model.seed: 42
     outs:
     - path: ./models/model.joblib
       hash: md5
-      md5: 9cf747444f308a3cea853856d0633a66
-      size: 8537
+      md5: 8117ab14f6fff62dd2f3412f3e791c9b
+      size: 7609
