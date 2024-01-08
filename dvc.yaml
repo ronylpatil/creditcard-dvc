@@ -8,4 +8,18 @@ stages:
     - load_dataset.raw_data
     - load_dataset.file_name
     outs:
-    - ./data/raw/${load_dataset.file_name}.csv
+    # read parameters from params.yaml
+    - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
+  
+  make_dataset:
+    cmd: python ./src/data/make_dataset.py 
+    deps:
+    - ./src/data/make_dataset.py
+    - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
+    params:
+    - make_dataset.test_split
+    - make_dataset.random_state
+    - make_dataset.processed_data
+    outs:
+    - .${make_dataset.processed_data}/train.csv
+    - .${make_dataset.processed_data}/test.csv

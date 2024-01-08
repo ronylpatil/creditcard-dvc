@@ -7,6 +7,9 @@ data_source:
 
 load_dataset:
   raw_data: /data/raw
-  # name for raw data going to store at data/raw, default = raw_data.csv
   file_name: creditcard
 
+make_dataset:
+  test_split: 0.3
+  random_state: 42
+  processed_data: /data/processed
