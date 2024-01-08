@@ -16,7 +16,6 @@ def load_data(data_path) :
         return data
     except Exception as e : 
         infologger.info(f'encountered error {e} while loading data')
-        return ''
 
 def split_data(df, test_split, seed) :
     # Split the dataset into train and test sets
@@ -26,7 +25,6 @@ def split_data(df, test_split, seed) :
         return train, test
     except Exception as e : 
         infologger.info(f'encountered error {e} while spliting data')
-        return ''
 
 def save_data(train, test, output_path) :
     # Save the split datasets to the specified output path
