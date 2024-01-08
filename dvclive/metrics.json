@@ -1,0 +1,8 @@
+{
+    "training": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+    },
+    "step": 0
+}
