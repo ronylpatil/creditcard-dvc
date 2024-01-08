@@ -18,3 +18,28 @@ stages:
       hash: md5
       md5: b1a68fb0cafa51b6e91dbed518cf7dee
       size: 358392
+  make_dataset:
+    cmd: python ./src/data/make_dataset.py
+    deps:
+    - path: ./data/raw/creditcard.csv
+      hash: md5
+      md5: b1a68fb0cafa51b6e91dbed518cf7dee
+      size: 358392
+    - path: ./src/data/make_dataset.py
+      hash: md5
+      md5: 28799fa20d6c4fb33336f475b30d1e5b
+      size: 2324
+    params:
+      params.yaml:
+        make_dataset.processed_data: /data/processed
+        make_dataset.random_state: 42
+        make_dataset.test_split: 0.3
+    outs:
+    - path: ./data/processed/test.csv
+      hash: md5
+      md5: bafa0d8e7d7351715e254c66e7eaf577
+      size: 107680
+    - path: ./data/processed/train.csv
+      hash: md5
+      md5: 215ca9170804e15ffb7c642e31cc6e67
+      size: 250834
