@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  load_dataset:
+    cmd: python ./src/data/load_dataset.py
+    deps:
+    - path: ./src/data/load_dataset.py
+      hash: md5
+      md5: 08dccc5e925fcaa44980a0fe3b17cc40
+      size: 1834
+    params:
+      params.yaml:
+        data_source.drive: 
+          https://drive.google.com/file/d/1CW_oiaBAKnDsH45iLUn6J5APUR0-7EqN/view?usp=drive_link
+        load_dataset.file_name: creditcard
+        load_dataset.raw_data: /data/raw
+    outs:
+    - path: ./data/raw/creditcard.csv
+      hash: md5
+      md5: b1a68fb0cafa51b6e91dbed518cf7dee
+      size: 358392
