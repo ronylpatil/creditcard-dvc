@@ -13,3 +13,9 @@ make_dataset:
   test_split: 0.3
   random_state: 42
   processed_data: /data/processed
+
+train_model:
+  seed: 36
+  n_estimators: 10
+  max_depth: 7
+  model_loc: /models

@@ -1,6 +1,6 @@
 stages:
   load_dataset:
-    cmd: python ./src/data/load_dataset.py 
+    cmd: python ./src/data/load_dataset.py
     deps:
     - ./src/data/load_dataset.py
     params:
@@ -10,9 +10,9 @@ stages:
     outs:
     # read parameters from params.yaml
     - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
-  
+
   make_dataset:
-    cmd: python ./src/data/make_dataset.py 
+    cmd: python ./src/data/make_dataset.py
     deps:
     - ./src/data/make_dataset.py
     - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
@@ -23,3 +23,24 @@ stages:
     outs:
     - .${make_dataset.processed_data}/train.csv
     - .${make_dataset.processed_data}/test.csv
+
+  train_model:
+    cmd: python ./src/models/train_model.py
+    deps:
+    - .${make_dataset.processed_data}/train.csv
+    - .${make_dataset.processed_data}/test.csv
+    - ./src/models/train_model.py
+    params:
+    - train_model.seed
+    - train_model.n_estimators
+    - train_model.max_depth
+    - train_model.model_loc
+    outs:
+    - .${train_model.model_loc}/model.joblib
+params:
+- dvclive/params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
