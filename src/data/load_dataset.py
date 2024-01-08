@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from src.log_config import infologger   
 
 infologger.info('Executing : load_dataset.py')
-infologger.info('fetch data from google drive and store it in data/raw dir')
+infologger.info('purpose: fetch data from google drive and store it in data/raw dir')
 
 def load_data(remote_loc) :
     # Load your dataset from a given path

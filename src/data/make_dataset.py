@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from src.log_config import infologger   
 
 infologger.info('Executing : make_dataset.py')
-infologger.info('fetch data from data/raw and perform train-test split')
+infologger.info('purpose: fetch data from data/raw and perform train-test split')
 
 def load_data(data_path) :
     # Load your dataset from a given path

@@ -8,7 +8,7 @@ from src.log_config import infologger
 from dvclive import Live
 
 infologger.info('Executing : train_model.py')
-infologger.info('train the model')
+infologger.info('purpose: train the model')
 
 def train_model(train_features, target, n_estimators, max_depth, seed) :
      try : 
