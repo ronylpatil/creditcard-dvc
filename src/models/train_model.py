@@ -33,11 +33,11 @@ def train_model(train_features, target, n_estimators, max_depth, seed) :
                infologger.info('successfully logged parameters & metrics through dvclive')
           except Exception as ie : 
                infologger.info(f'failed to load dvclive, encountered error {ie}')
+          return model
      except Exception as oe : 
           infologger.info(f'failed to load model, encountered error {oe}')
-     else : 
-          return model          
-
+          
+          
 def save_model(model, output_path) : 
      # Save the trained model to the specified output path
      try : 
