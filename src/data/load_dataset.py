@@ -18,7 +18,7 @@ def load_data(remote_loc) :
           return df
      except Exception as e : 
           infologger.info(f'Loading data from remote location failed with error : {e}')
-          return ''
+
 
 def save_data(raw_data, output_path, file_name) : 
      # store data in data/raw dir
