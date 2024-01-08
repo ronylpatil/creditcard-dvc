@@ -10,12 +10,12 @@ load_dataset:
   file_name: creditcard
 
 make_dataset:
-  test_split: 0.3
+  test_split: 0.2
   random_state: 42
   processed_data: /data/processed
 
 train_model:
   seed: 42
-  n_estimators: 8
+  n_estimators: 10
   max_depth: 7
   model_loc: /models

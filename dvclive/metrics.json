@@ -6,7 +6,7 @@
     },
     "step": 0,
     "testing": {
-        "roc_auc_score": 0.99,
+        "roc_auc_score": 0.49,
         "bal_acc_score": 0.5,
         "recall": 0.0,
         "precision": 1.0
