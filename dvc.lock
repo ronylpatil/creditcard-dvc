@@ -63,9 +63,9 @@ stages:
         train_model.max_depth: 7
         train_model.model_loc: /models
         train_model.n_estimators: 10
-        train_model.seed: 36
+        train_model.seed: 42
     outs:
     - path: ./models/model.joblib
       hash: md5
-      md5: b822e22aa9f3a56566730c24e029036c
-      size: 8857
+      md5: 9cf747444f308a3cea853856d0633a66
+      size: 8537
