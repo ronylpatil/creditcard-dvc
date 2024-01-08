@@ -1,0 +1,12 @@
+base:
+  project: creditcard-project
+  target_col: Class
+
+data_source:
+  drive: https://drive.google.com/file/d/1CW_oiaBAKnDsH45iLUn6J5APUR0-7EqN/view?usp=drive_link
+
+load_dataset:
+  raw_data: /data/raw
+  # name for raw data going to store at data/raw, default = raw_data.csv
+  file_name: creditcard
+
