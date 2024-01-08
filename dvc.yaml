@@ -1,11 +1,11 @@
 stages:
   load_dataset:
-    cmd: python .\src\data\load_dataset.py 
+    cmd: python ./src/data/load_dataset.py 
     deps:
-    - .\src\data\load_dataset.py
+    - ./src/data/load_dataset.py
     params:
     - data_source.drive
     - load_dataset.raw_data
     - load_dataset.file_name
     outs:
-    - .\data\raw\{{load_dataset.file_name}}.csv
+    - ./data/raw/${load_dataset.file_name}.csv
