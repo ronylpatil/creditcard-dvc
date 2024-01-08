@@ -20,6 +20,8 @@ stages:
     - make_dataset.test_split
     - make_dataset.random_state
     - make_dataset.processed_data
+    - load_dataset.raw_data
+    - load_dataset.file_name
     outs:
     - .${make_dataset.processed_data}/train.csv
     - .${make_dataset.processed_data}/test.csv
@@ -35,8 +37,22 @@ stages:
     - train_model.n_estimators
     - train_model.max_depth
     - train_model.model_loc
+    - make_dataset.processed_data
+    - base.target_col
     outs:
     - .${train_model.model_loc}/model.joblib
+
+  predict_model:
+    cmd: python ./src/models/predict_model.py
+    deps:
+    - .${make_dataset.processed_data}/train.csv
+    - .${make_dataset.processed_data}/test.csv
+    - ./src/models/predict_model.py
+    params:
+    - train_model.model_loc
+    - make_dataset.processed_data
+    - base.target_col
+
 params:
 - dvclive/params.yaml
 metrics:
