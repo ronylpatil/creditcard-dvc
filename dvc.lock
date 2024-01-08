@@ -31,6 +31,8 @@ stages:
       size: 2295
     params:
       params.yaml:
+        load_dataset.file_name: creditcard
+        load_dataset.raw_data: /data/raw
         make_dataset.processed_data: /data/processed
         make_dataset.random_state: 42
         make_dataset.test_split: 0.3
@@ -60,6 +62,8 @@ stages:
       size: 3220
     params:
       params.yaml:
+        base.target_col: Class
+        make_dataset.processed_data: /data/processed
         train_model.max_depth: 7
         train_model.model_loc: /models
         train_model.n_estimators: 8
@@ -69,3 +73,23 @@ stages:
       hash: md5
       md5: 8117ab14f6fff62dd2f3412f3e791c9b
       size: 7609
+  predict_model:
+    cmd: python ./src/models/predict_model.py
+    deps:
+    - path: ./data/processed/test.csv
+      hash: md5
+      md5: bafa0d8e7d7351715e254c66e7eaf577
+      size: 107680
+    - path: ./data/processed/train.csv
+      hash: md5
+      md5: 215ca9170804e15ffb7c642e31cc6e67
+      size: 250834
+    - path: ./src/models/predict_model.py
+      hash: md5
+      md5: 40995d51ae5db09940987eb0700973c9
+      size: 2574
+    params:
+      params.yaml:
+        base.target_col: Class
+        make_dataset.processed_data: /data/processed
+        train_model.model_loc: /models
