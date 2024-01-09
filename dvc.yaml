@@ -3,6 +3,7 @@ stages:
     cmd: python ./src/data/load_dataset.py
     deps:
     - ./src/data/load_dataset.py
+    # here this params: section is optional, am writing here for better understanding the complete flow 
     params:
     - data_source.drive
     - load_dataset.raw_data
