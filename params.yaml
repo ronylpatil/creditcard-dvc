@@ -16,6 +16,6 @@ make_dataset:
 
 train_model:
   seed: 42
-  n_estimators: 10
-  max_depth: 7
+  n_estimators: 15
+  max_depth: 8
   model_loc: /models

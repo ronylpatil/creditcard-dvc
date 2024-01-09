@@ -64,22 +64,22 @@ stages:
       params.yaml:
         base.target_col: Class
         make_dataset.processed_data: /data/processed
-        train_model.max_depth: 7
+        train_model.max_depth: 8
         train_model.model_loc: /models
-        train_model.n_estimators: 10
+        train_model.n_estimators: 15
         train_model.seed: 42
     outs:
     - path: ./models/model.joblib
       hash: md5
-      md5: 9cf747444f308a3cea853856d0633a66
-      size: 8537
+      md5: 13c8e282618cbe187a27bd46a839072c
+      size: 12297
   predict_model:
     cmd: python ./src/models/predict_model.py
     deps:
     - path: ./models/model.joblib
       hash: md5
-      md5: 9cf747444f308a3cea853856d0633a66
-      size: 8537
+      md5: 13c8e282618cbe187a27bd46a839072c
+      size: 12297
     - path: ./src/models/predict_model.py
       hash: md5
       md5: 40995d51ae5db09940987eb0700973c9
