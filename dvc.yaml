@@ -15,7 +15,7 @@ stages:
     cmd: python ./src/data/make_dataset.py
     deps:
     - ./src/data/make_dataset.py
-    - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
+    - .${load_dataset.raw_data}/${load_dataset.file_name}.csv     # depend on raw data
     params:
     - make_dataset.test_split
     - make_dataset.random_state
@@ -29,8 +29,8 @@ stages:
   train_model:
     cmd: python ./src/models/train_model.py
     deps:
-    - .${make_dataset.processed_data}/train.csv
-    - .${make_dataset.processed_data}/test.csv
+    - .${make_dataset.processed_data}/train.csv     # depend on train.csv &
+    - .${make_dataset.processed_data}/test.csv      # test.csv
     - ./src/models/train_model.py
     params:
     - train_model.seed
@@ -45,9 +45,8 @@ stages:
   predict_model:
     cmd: python ./src/models/predict_model.py
     deps:
-    - .${make_dataset.processed_data}/train.csv
-    - .${make_dataset.processed_data}/test.csv
     - ./src/models/predict_model.py
+    - .${train_model.model_loc}/model.joblib     # depend on model.joblib
     params:
     - train_model.model_loc
     - make_dataset.processed_data
