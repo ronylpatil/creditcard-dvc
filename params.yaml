@@ -10,7 +10,7 @@ load_dataset:
   file_name: creditcard
 
 make_dataset:
-  test_split: 0.2
+  test_split: 0.3
   random_state: 42
   processed_data: /data/processed
 
