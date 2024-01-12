@@ -25,10 +25,10 @@ def train_model(train_features, target, n_estimators, max_depth, seed) :
                     live.log_param('max_depth', max_depth)
                     live.log_param('random_state', seed)
                     # log training metrics
-                    live.log_metric('training/accuracy', float("{:.2f}".format(accuracy)), timestamp = True)
+                    live.log_metric('training/accuracy', float("{:.2f}".format(accuracy)))
                     live.log_metric('training/precision', float("{:.2f}".format(metrics.\
-                                                                                precision_score(target, pred_train, zero_division = 1))), timestamp = True)
-                    live.log_metric('training/recall', float("{:.2f}".format(metrics.recall_score(target, pred_train))), timestamp = True)
+                                                                                precision_score(target, pred_train, zero_division = 1))))
+                    live.log_metric('training/recall', float("{:.2f}".format(metrics.recall_score(target, pred_train))))
 
                infologger.info('successfully logged parameters & metrics through dvclive')
           except Exception as ie : 
@@ -37,7 +37,7 @@ def train_model(train_features, target, n_estimators, max_depth, seed) :
      except Exception as oe : 
           infologger.info(f'failed to load model, encountered error {oe}')
           
-
+          
 def save_model(model, output_path) : 
      # Save the trained model to the specified output path
      try : 
