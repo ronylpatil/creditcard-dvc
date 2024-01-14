@@ -55,12 +55,14 @@ stages:
     - make_dataset.processed_data
     - base.target_col
 
+# try to manually create dir reports and 
+# dump this data manually in json files
+# ref: day3 sunny 
 params:
 - dvclive/params.yaml
 metrics:
 - dvclive/metrics.json
+# use plot = False in log_metric(). Useful in case of iteration
 plots:
 - dvclive/plots/metrics:
     x: step
-
-# see every stage is consuming/depends output of previous stage, this is how we stitch the stages and form a pipeline. 
