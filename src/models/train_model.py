@@ -25,6 +25,7 @@ def train_model(train_features, target, n_estimators, max_depth, seed) :
                     live.log_param('max_depth', max_depth)
                     live.log_param('random_state', seed)
                     # log training metrics
+                    # make plot = False, useful in case of iteration
                     live.log_metric('training/accuracy', float("{:.2f}".format(accuracy)))
                     live.log_metric('training/precision', float("{:.2f}".format(metrics.\
                                                                                 precision_score(target, pred_train, zero_division = 1))))
