@@ -34,28 +34,24 @@ stages:
         load_dataset.file_name: creditcard
         load_dataset.raw_data: /data/raw
         make_dataset.processed_data: /data/processed
-        make_dataset.random_state: 42
+        make_dataset.random_state: 52
         make_dataset.test_split: 0.3
     outs:
     - path: ./data/processed/test.csv
       hash: md5
-      md5: bafa0d8e7d7351715e254c66e7eaf577
-      size: 107680
+      md5: 65fdf529f79ec3c6eca5aaaa8790fa1d
+      size: 107734
     - path: ./data/processed/train.csv
       hash: md5
-      md5: 215ca9170804e15ffb7c642e31cc6e67
-      size: 250834
+      md5: f14e281b5741b529831830987a74d353
+      size: 250780
   train_model:
     cmd: python ./src/models/train_model.py
     deps:
-    - path: ./data/processed/test.csv
-      hash: md5
-      md5: bafa0d8e7d7351715e254c66e7eaf577
-      size: 107680
     - path: ./data/processed/train.csv
       hash: md5
-      md5: 215ca9170804e15ffb7c642e31cc6e67
-      size: 250834
+      md5: f14e281b5741b529831830987a74d353
+      size: 250780
     - path: ./src/models/train_model.py
       hash: md5
       md5: f255227355602052e40a255a7d0c6fbc
@@ -66,20 +62,24 @@ stages:
         make_dataset.processed_data: /data/processed
         train_model.max_depth: 8
         train_model.model_loc: /models
-        train_model.n_estimators: 15
+        train_model.n_estimators: 20
         train_model.seed: 42
     outs:
     - path: ./models/model.joblib
       hash: md5
-      md5: 13c8e282618cbe187a27bd46a839072c
-      size: 12297
+      md5: 954e148c1e760577bc7612c683b0862b
+      size: 19257
   predict_model:
     cmd: python ./src/models/predict_model.py
     deps:
+    - path: ./data/processed/test.csv
+      hash: md5
+      md5: 65fdf529f79ec3c6eca5aaaa8790fa1d
+      size: 107734
     - path: ./models/model.joblib
       hash: md5
-      md5: 13c8e282618cbe187a27bd46a839072c
-      size: 12297
+      md5: 954e148c1e760577bc7612c683b0862b
+      size: 19257
     - path: ./src/models/predict_model.py
       hash: md5
       md5: 40995d51ae5db09940987eb0700973c9

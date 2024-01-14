@@ -93,3 +93,6 @@ testing.py
 
 # excluding __init__.py file from tracking(used to make packages and sub-packages so that we can easily use files from diff loc)
 __init__.py
+
+# excluding secret.yaml, as its storing the confidential info.
+secret.yaml
