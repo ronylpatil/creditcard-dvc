@@ -1,7 +1,9 @@
 creditcard_dvc
 ==============================
 
-Implementing data version control and model experimentation workflow using DVC & DVClive.
+Implemented data version control, model experimentation workflow using DVC & DVClive, and CI using GitHub Actions.
+
+[![CI Pipeline](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml)
 
 Project Organization
 ------------
@@ -53,5 +55,3 @@ Project Organization
 
 
 --------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
