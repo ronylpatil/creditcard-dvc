@@ -14,7 +14,9 @@ creditcard/     (root dir)
 |-- setup.py (create it in root)
 |-- __init__.py (create it so it will recognized as package)
 
-Now goto terminal at credicard loc and hit "pip install -e ."
+Now goto terminal at credicard loc and hit "pip install -e ."(there is dot after -e)
+Now to update this local package in req.txt add this :
+     "-e ."
 That's it.
 """
 
