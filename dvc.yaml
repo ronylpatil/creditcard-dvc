@@ -62,7 +62,6 @@ params:
 - dvclive/params.yaml
 metrics:
 - dvclive/metrics.json
-# use plot = False in log_metric(). Useful in case of iteration
 plots:
 - dvclive/plots/metrics:
     x: step
