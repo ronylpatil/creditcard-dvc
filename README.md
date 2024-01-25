@@ -1,9 +1,13 @@
-creditcard_dvc
+E2E ML Workflow
 ==============================
 
-Implemented data version control, model experimentation workflow using DVC & DVClive, and CI using GitHub Actions.
+Implement data version control, model experimentation & CI using DVC, DVClive & GitHub Actions.
 
 [![CI Pipeline](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml)
+
+<p align = "center">
+  <img class="center" src = ".\images\MastertheHandStitch-main.jpg" alt = "Drawing" style = "width : 2000;">
+</p>
 
 Project Organization
 ------------
@@ -12,7 +16,7 @@ Project Organization
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
-    │   ├── external       <- Data from third party sources.
+    │   ├── external       <- Data from third-party sources.
     │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
@@ -48,7 +52,7 @@ Project Organization
     │   │   ├── predict_model.py
     │   │   └── train_model.py
     │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │   └── visualization  <- Scripts to create exploratory and results-oriented visualizations
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
