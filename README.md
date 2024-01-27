@@ -24,5 +24,7 @@ Implemented data versioning, model experimentation & CI using DVC, DVClive & Git
 - `/log`: Store the log files.
 - `/dvclive`: Store the logged parameters & metrics. 
 
+## Dataset
 
+- Download the dataset from [here](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
 --------
