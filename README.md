@@ -5,7 +5,7 @@ Implemented data versioning, model experimentation & CI using DVC, DVClive & Git
 
 [![CI Pipeline](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/ronylpatil/creditcard-dvc/actions/workflows/ci.yaml)
 
-**Blog :** 
+**Blog :** [ML Workflow with DVC & DVCLive](https://medium.com/towards-artificial-intelligence/data-alchemy-transformative-ml-workflows-with-dvc-dvclive-b1f88e235493)
 
 ## Installation
 
